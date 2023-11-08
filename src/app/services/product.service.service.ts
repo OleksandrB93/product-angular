@@ -25,6 +25,10 @@ export class ProductServiceService {
       );
   }
 
+  getById(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`https://fakestoreapi.com/products/${id}`);
+  }
+
   create(product: IProduct): Observable<IProduct> {
     return this.http
       .post<IProduct>('https://fakestoreapi.com/products', product)
